@@ -16,26 +16,44 @@ public class PadreFamiliaImpl implements PadreFamiliaService{
 
     @Override
     public List<PadreFamilia> getAll() {
-        return null;
+        return padreFamiliaRepository.findAll();
     }
 
     @Override
     public Optional<PadreFamilia> findById(Long id) {
-        return Optional.empty();
+        return padreFamiliaRepository.findById(id).map(record -> Optional.of(record)).orElse(Optional.empty());
     }
 
     @Override
     public Optional<PadreFamilia> save(PadreFamilia padreFamilia) {
-        return Optional.empty();
+        return Optional.of(padreFamiliaRepository.save(padreFamilia));
     }
 
     @Override
     public Optional<PadreFamilia> update(PadreFamilia padreFamilia) {
+        Optional<PadreFamilia> record = padreFamiliaRepository.findById(padreFamilia.getId());
+        if (record.isPresent()) {
+            PadreFamilia data = record.get();
+            data.setNombre(padreFamilia.getNombre());
+            data.setPrimerApellido(padreFamilia.getPrimerApellido());
+            data.setSegundoApellido(padreFamilia.getSegundoApellido());
+            data.setCedula(padreFamilia.getCedula());
+            data.setDireccion(padreFamilia.getDireccion());
+            data.setTelefonoPrimario(padreFamilia.getTelefonoPrimario());
+            data.setTelefonoSecundario(padreFamilia.getTelefonoSecundario());
+            data.setHijosList(padreFamilia.getHijosList());
+            return Optional.of(padreFamiliaRepository.save(data));
+        }
         return Optional.empty();
     }
 
     @Override
     public boolean delete(Long id) {
+        Optional<PadreFamilia> result = padreFamiliaRepository.findById(id);
+        if (result.isPresent()){
+            padreFamiliaRepository.deleteById(id);
+            return true;
+        }
         return false;
     }
 }
