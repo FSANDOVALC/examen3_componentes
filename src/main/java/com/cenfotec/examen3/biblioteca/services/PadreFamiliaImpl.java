@@ -20,7 +20,7 @@ public class PadreFamiliaImpl implements PadreFamiliaService{
     }
 
     @Override
-    public Optional<PadreFamilia> findById(String id) {
+    public Optional<PadreFamilia> findById(Long id) {
         return Optional.empty();
     }
 
@@ -35,7 +35,7 @@ public class PadreFamiliaImpl implements PadreFamiliaService{
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         return false;
     }
 }

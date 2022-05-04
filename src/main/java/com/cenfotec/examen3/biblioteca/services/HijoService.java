@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface HijoService {
     public List<Hijo> getAll();
-    public Optional<Hijo> findById(String id);
+    public Optional<Hijo> findById(Long id);
     public Optional<Hijo> save(Hijo hijo);
     public Optional<Hijo> update(Hijo hijo);
-    public boolean delete(String id);
+    public boolean delete(Long id);
 }

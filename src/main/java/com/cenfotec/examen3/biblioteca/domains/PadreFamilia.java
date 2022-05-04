@@ -16,9 +16,11 @@ public class PadreFamilia {
     @Id
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
 
     private String nombre;
+    private String primerApellido;
+    private String segundoApellido;
     private String cedula;
     private String direccion;
     private String telefonoPrimario;

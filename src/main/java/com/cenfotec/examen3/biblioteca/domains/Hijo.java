@@ -15,8 +15,11 @@ public class Hijo {
     @Id
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
 
+    private String nombre;
+    private String primerApellido;
+    private String segundoApellido;
     private boolean planLectura;
     private boolean planGuarderia;
     private String alergias;

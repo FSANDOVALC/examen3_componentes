@@ -20,7 +20,7 @@ public class HijoServiceImpl implements HijoService{
     }
 
     @Override
-    public Optional<Hijo> findById(String id) {
+    public Optional<Hijo> findById(Long id) {
         return Optional.empty();
     }
 
@@ -35,7 +35,7 @@ public class HijoServiceImpl implements HijoService{
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         return false;
     }
 }
