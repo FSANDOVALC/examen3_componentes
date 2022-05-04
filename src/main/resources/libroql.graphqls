@@ -1,7 +1,7 @@
 type Libro {
     id: ID!,
-    nombre: String,
-    autor: String
+    nombre: String!,
+    autor: String!
 }
 
 type Query {
@@ -10,5 +10,5 @@ type Query {
 }
 
 type Mutation {
-    crearLibro(nombre: String!, autor: String!):Libro
+    createLibro(nombre: String!, autor: String!): Libro
 }
