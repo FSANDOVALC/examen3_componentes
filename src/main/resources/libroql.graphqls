@@ -1,0 +1,14 @@
+type Libro {
+    id: ID!,
+    nombre: String,
+    autor: String
+}
+
+type Query {
+    libros(count: Int):[Libro],
+    libro(id: ID): Libro
+}
+
+type Mutation {
+    crearLibro(nombre: String!, autor: String!):Libro
+}
